@@ -1,45 +1,114 @@
-# MapUp - Analytics Dashboard Assessment
+
+---
+
+# EV Analytics Dashboard
 
 ## Overview
 
-The objective of this assessment is to analyze the provided Electric Vehicle (EV) population data and create a frontend dashboard that visualizes key insights about the dataset. This repository contains the necessary data and instructions for you to demonstrate your analytical and dashboard creation skills. Feel free to use any tech stack you want to create the dashboard.
+This project presents an analytical dashboard that visualizes key insights from an Electric Vehicle (EV) population dataset. The dashboard is designed to provide a comprehensive view of EV adoption trends, vehicle types, manufacturer statistics, and much more. It allows users to interact with the data through charts, tables, and insightful key metrics.
 
-## Dataset
+You can view the live dashboard here: [EV Analytics Dashboard](https://ev-analytic-dashboard.vercel.app/).
 
-The Electric Vehicle Population dataset is available in the [Electric Vehicle Population Data (CSV)](./data-to-visualize/Electric_Vehicle_Population_Data.csv) within this repository, for more information about the dataset visit [kaggle dataset](https://www.kaggle.com/datasets/willianoliveiragibin/electric-vehicle-population).
+## Folder Structure
 
-**Note:** We've reduced the dataset in the repository to keep the data size small in the frontend bundle.
+- **data-to-visualize/**  
+  Contains the CSV file that was converted into JSON using Node.js's `fs` module and `csv-parse` library. This JSON data is the basis for all visualizations on the dashboard.
 
-## Tasks
+- **components/**  
+  This folder contains reusable React components:
+  - **BarChart.jsx**: Displays bar charts for various data points.
+  - **PieChart.jsx**: Visualizes proportions in the dataset with pie charts.
+  - **RangeDistribution.jsx**: Visualizes the distribution of electric vehicle ranges.
+  - **DashboardCard.jsx**: Displays key metrics in card format.
+  - **EvTable.jsx**: A table component with search, sorting, and pagination functionality to present the dataset.
+  - **KeyInsight.jsx**: Summarizes key insights and findings from the data.
 
-### Dashboard Creation:
+- **public/**  
+  Contains public assets, including icons and static images.
 
-- Create a frontend dashboard that presents key insights from the dataset.
-- Design the dashboard to effectively communicate important metrics and visualizations.
-- Include visual representations such as charts, graphs, or tables to showcase trends and relationships in the data.
-- Ensure the dashboard is user-friendly and intuitive for exploring the dataset.
+- **src/**  
+  Contains main application logic, configuration, and UI components.
 
-### Deployment:
+## Features
 
-- Deploy your frontend dashboard to a hosting platform of your choice.
-- Make sure the dashboard is publicly accessible.
+### Dashboard
 
-## Evaluation Criteria
+The EV Analytics Dashboard presents the following insights:
+- **Total Vehicles**: Shows the total number of vehicles in the dataset.
+- **Average Electric Range**: Provides the average electric range of vehicles.
+- **Top Manufacturer**: Displays the manufacturer with the most vehicles.
+- **Top Model**: Highlights the most common vehicle model in the dataset.
 
-Your submission will be evaluated based on:
+### Charts and Graphs
 
-- **Analytical Depth:** The depth of your analysis and insights derived from the dataset.
-- **Dashboard Design:** Clarity, aesthetics, and usability of the frontend dashboard.
-- **Insightfulness:** Effectiveness in conveying key insights about electric vehicles.
+- **Electric Vehicle Types**: A pie chart that shows the distribution of different EV types.
+- **Top 5 Counties**: A bar chart that highlights the counties with the highest number of EVs.
+- **Top 5 Manufacturers**: A bar chart visualizing the manufacturers with the most vehicles in the dataset.
+- **CAFV Eligibility**: A pie chart displaying Clean Alternative Fuel Vehicle (CAFV) eligibility among vehicles.
 
-## Submission Guidelines
+### Table
 
-- Fork this repository to your GitHub account.
-- Complete your analysis and create the frontend dashboard.
-- Deploy the dashboard to a hosting platform.
-- Update this [README.md](README.md) file with the URL to your live dashboard.
-- **Repository Access:** Keep your repository private to avoid visibility by other candidates. Add the following email addresses as collaborators to the repository, these are our internal emails and will be evaluating your assessment:
-  - vedantp@mapup.ai
-  - ajayap@mapupa.ai
-  - divyanshs@mapup.ai
-- Finally, please fill out the google form that you received via email to submit the assessment for review before 2024-06-16 11:59 PM.
+The table provides an interactive way to explore the data with search, sort, and pagination features, allowing users to easily find specific records or trends.
+
+### Key Insights
+
+The `KeyInsight` component summarizes useful information derived from the dataset, such as:
+- Notable trends in electric vehicle adoption.
+- Insights into model year distributions and manufacturer dominance.
+
+## Installation
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+- Node.js (v16+)
+- npm or yarn
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Pritam-Git01/mapup-analytic-dashboard.git
+   ```
+
+2. Navigate into the project directory:
+   ```bash
+   cd mapup-analytic-dashboard
+   ```
+
+3. Install the necessary dependencies:
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+
+### Run the Project
+
+To run the project locally, use the following command:
+```bash
+npm run dev
+```
+or
+```bash
+yarn dev
+```
+This will start the development server on `http://localhost:3000`.
+
+### Deployment
+
+The project has been deployed using Vercel. To deploy it yourself, follow these steps:
+
+1. Push the repository to your GitHub account.
+2. Connect the GitHub repository to Vercel.
+3. Set up the build and deploy the project on Vercel.
+
+Your dashboard will then be live and accessible through the Vercel link.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
